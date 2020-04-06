@@ -1,7 +1,9 @@
 # STEGNO:
 
 https://www.yeahhub.com/top-steganography-tools-ctf-challenges/
-fix corrupted compressed file:
+
+**fix corrupted compressed file:**
+
 https://extract.me/
 
 # BINWALK:
@@ -9,17 +11,24 @@ binwalk --dd='.*' filename
 
 
 # Encoding:
-Jsf**k 
+*Jsf**k *
 http://www.jsfuck.com/ 
-Dancing Men Chiper 
-https://www.dcode.fr/dancing-men-cipher 
-Mores Code 
-XOR online (stream cipher):
-https://wiremask.eu/tools/xor-cracker/
-https://morsify.net/
-https://morsecode.world/international/translator.html 
-Brain code 
 https://copy.sh/brainfuck/text.html 
+
+*Dancing Men Chiper* 
+https://www.dcode.fr/dancing-men-cipher 
+*Mores Code *
+
+https://morsify.net/
+
+https://morsecode.world/international/translator.html 
+
+
+*XOR online (stream cipher)*
+https://wiremask.eu/tools/xor-cracker/
+
+**All encodings**
+
 https://gchq.github.io/CyberChef/
 
 
@@ -31,60 +40,89 @@ openssl enc -in msgfile -out binarytext -d -a && openssl rsautl -decrypt -in bin
 
 
 test ' || (select sql from sqlite_master) || '
+
 test '|| (select password from xde43_users where role="admin" ) ||'
 
 # WIFI CRACK:
-to catpture hadshack:
+*to catpture hadshack:*
 	wifite -i wlan1
-convert handshack file to hashcat format:
+	
+*convert handshack file to hashcat format:*
 	aircrack-ng -J file handshack.cap
+	
 	this would genereate file.hccap
+
 convert hccap file to password crackers format
-	jhon the ripper:	
+**	jhon the ripper:**	
 	hccap2jhon file.hccap > file.txt
+	
 	this would generat txt file to be cracked by jhon the ripper
-	hashcat format:
+	*hashcat format:*
 	cap2hccapx "the cap file(handcheck)" output.hccapx
-	OR
+	
+	                              **OR**
 	http://hashcat.net/cap2hccapx
+	
 # PASSWORD CRACKING:
 jhon password file
+
+jhon --wordlist=*path of the dictinory* the hash file
 johnny
+
  crunch "minimum lignth" "maximum linth" "cherchterset"
+
 # REVERSE:
+
 objdump
+
 # HASHCAT:
+
  hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b ASCWG{?a?a?a?a?a}
-cat *.hccapx > all.hccapx
+ 
+ optional: -w 3
+
+list of cracked hashes:
 
  cat /root/.hashcat/hashcat.potfile
 
 # BASE monopelation:
+
 base64 -d test | hexdump -C
+
 base64 -d test | xxd -p
 
 
  hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
+
 -a 0 for dictionary attack
+
 -o path of the output file if needed
 
 
 
 
 # CRYPTOGRAPHY:
+
 www.dcode.fr
+
 cryptii.com
+
 quipqiup.com 
+
 planetcalc.com
+
 sprenger.com   (books)
 
 
 # HASH:
+
 https://hashkiller.co.uk/
+
 https://www.tunnelsup.com/hash-analyzer/
 
 
-  * if IC (index of coincedance) is ARROUND .038 the encryption is POLYALPHAPITIC
+* if IC (index of coincedance) is ARROUND .038 the encryption is POLYALPHAPITIC
+
 u might use dcode fr to calculate the key lingth
 * if IC is ARROUND .067 the encryption is MONOALPHAPTIIC
 	* if LETTER FREQUANCY is LIKE ENGLISH the encryption is TRANSPOSITION
