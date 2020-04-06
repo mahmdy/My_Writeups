@@ -12,11 +12,15 @@ binwalk --dd='.*' filename
 
 # Encoding:
 *Jsf**k *
+
 http://www.jsfuck.com/ 
+
 https://copy.sh/brainfuck/text.html 
 
 *Dancing Men Chiper* 
+
 https://www.dcode.fr/dancing-men-cipher 
+
 *Mores Code *
 
 https://morsify.net/
@@ -25,6 +29,7 @@ https://morsecode.world/international/translator.html
 
 
 *XOR online (stream cipher)*
+
 https://wiremask.eu/tools/xor-cracker/
 
 **All encodings**
@@ -45,31 +50,39 @@ test '|| (select password from xde43_users where role="admin" ) ||'
 
 # WIFI CRACK:
 *to catpture hadshack:*
+	
 	wifite -i wlan1
 	
 *convert handshack file to hashcat format:*
+	
 	aircrack-ng -J file handshack.cap
 	
 	this would genereate file.hccap
 
 convert hccap file to password crackers format
+
 **	jhon the ripper:**	
-	hccap2jhon file.hccap > file.txt
-	
-	this would generat txt file to be cracked by jhon the ripper
-	*hashcat format:*
-	cap2hccapx "the cap file(handcheck)" output.hccapx
+
+hccap2jhon file.hccap > file.txt
+
+this would generat txt file to be cracked by jhon the ripper
+
+*hashcat format:*
+
+cap2hccapx "the cap file(handcheck)" output.hccapx
 	
 	                              **OR**
-	http://hashcat.net/cap2hccapx
+
+http://hashcat.net/cap2hccapx
 	
 # PASSWORD CRACKING:
 jhon password file
 
 jhon --wordlist=*path of the dictinory* the hash file
+
 johnny
 
- crunch "minimum lignth" "maximum linth" "cherchterset"
+crunch "minimum lignth" "maximum linth" "cherchterset"
 
 # REVERSE:
 
@@ -77,13 +90,22 @@ objdump
 
 # HASHCAT:
 
- hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b ASCWG{?a?a?a?a?a}
+bruteforce masking attack
+
+hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b FLAG{?a?a?a?a?a}
  
  optional: -w 3
+ 
+hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
+
+-a 0 for dictionary attack
+
+-o path of the output file if needed
+
 
 list of cracked hashes:
 
- cat /root/.hashcat/hashcat.potfile
+cat /root/.hashcat/hashcat.potfile
 
 # BASE monopelation:
 
@@ -92,13 +114,11 @@ base64 -d test | hexdump -C
 base64 -d test | xxd -p
 
 
- hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
+# HASH:
 
--a 0 for dictionary attack
+https://hashkiller.co.uk/
 
--o path of the output file if needed
-
-
+https://www.tunnelsup.com/hash-analyzer/
 
 
 # CRYPTOGRAPHY:
@@ -113,12 +133,6 @@ planetcalc.com
 
 sprenger.com   (books)
 
-
-# HASH:
-
-https://hashkiller.co.uk/
-
-https://www.tunnelsup.com/hash-analyzer/
 
 
 * if IC (index of coincedance) is ARROUND .038 the encryption is POLYALPHAPITIC
