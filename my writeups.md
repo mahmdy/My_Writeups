@@ -84,6 +84,12 @@ johnny
 
 crunch "minimum lignth" "maximum linth" "cherchterset"
 
+crunch 10 10 -t @@@@@@0728 -o /root/birthdaywordlist.lst
+
+it is a 10 charachters password generator with known plane text "728"
+
+directing output  " -o- " to /root/wordlist.lst
+
 # REVERSE:
 
 objdump
