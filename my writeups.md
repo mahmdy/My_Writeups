@@ -11,7 +11,9 @@ binwalk --dd='.*' filename
 
 
 # Encoding:
-*Jsf**k *
+*Jsf**k*
+
+http://codertab.com/JsUnFuck
 
 http://www.jsfuck.com/ 
 
@@ -21,7 +23,7 @@ https://copy.sh/brainfuck/text.html
 
 https://www.dcode.fr/dancing-men-cipher 
 
-*Mores Code *
+*Mores Code*
 
 https://morsify.net/
 
@@ -43,11 +45,11 @@ openssl enc -in msgfile -out binarytext -d -a && openssl rsautl -decrypt -in bin
 
 # SQL INJECTION:
 
-
+```
 test ' || (select sql from sqlite_master) || '
 
 test '|| (select password from xde43_users where role="admin" ) ||'
-
+```
 # WIFI CRACK:
 *to catpture hadshack:*
 	
@@ -83,6 +85,12 @@ jhon --wordlist=*path of the dictinory* the hash file
 johnny
 
 crunch "minimum lignth" "maximum linth" "cherchterset"
+
+crunch 10 10 -t @@@@@@0728 -o /root/birthdaywordlist.lst
+
+it is a 10 charachters password generator with known plane text "728"
+
+directing output  " -o- " to /root/wordlist.lst
 
 # REVERSE:
 
