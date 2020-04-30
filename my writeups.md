@@ -164,7 +164,18 @@ HILL CIPHER:
 			M1=gC0+hC1			  &	M3=gC2+hC3
 
 ```
+##Discrete Logarithm Problem:
 
+```
+       b
+  Y = a  mod p
+  
+  2 = dlog  4
+         2,5
+
+  b = dlog  Y
+         a,p
+```
 # SNOW:
 
 to hide a message:
