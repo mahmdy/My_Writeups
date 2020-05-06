@@ -80,8 +80,9 @@ http://hashcat.net/cap2hccapx
 # PASSWORD CRACKING:
 jhon password file
 
+```
 jhon --wordlist=*path of the dictinory* the hash file
-
+```
 johnny
 
 crunch "minimum lignth" "maximum linth" "cherchterset"
