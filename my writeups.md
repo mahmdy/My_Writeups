@@ -85,9 +85,9 @@ jhon --wordlist=*path of the dictinory* the hash file
 johnny
 
 crunch "minimum lignth" "maximum linth" "cherchterset"
-
+```
 crunch 10 10 -t @@@@@@0728 -o /root/birthdaywordlist.lst
-
+```
 it is a 10 charachters password generator with known plane text "728"
 
 directing output  " -o- " to /root/wordlist.lst
@@ -167,6 +167,12 @@ HILL CIPHER:
 ##Discrete Logarithm Problem:
 
 ```
+  phi(n) = (p-1)*(q-1)
+  where *p,q* are primes and n = p * q 
+
+```
+
+```
        b
   Y = a  mod p
   
@@ -176,13 +182,22 @@ HILL CIPHER:
   b = dlog  Y
          a,p
 ```
+
+where *p* is a prime number and *a* is a generator of *p*
+
 # SNOW:
 
 to hide a message:
+```
 snow -C -m "the secrit message" -p "password" inputfile outputfile
+```
+
 to unhide message:
+```
 snow -C -p "password" outputfile
+```
 or -Q
+
 -p is only needed if you are going to use a password
 
 
@@ -190,3 +205,11 @@ or -Q
 
 dd if=./file_with_a_file_in_it.xxx of=./extracted_file.xxx bs=1 skip=[befor the start of the file in bytes] count=[file lingh]
 
+
+
+# Web:
+
+pybass ip filter 
+```
+X-Forwarded-For: [ip address from the allow list (i used  127.0.0.1 as localhost should normaly be allowed)]
+```
