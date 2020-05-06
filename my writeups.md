@@ -167,6 +167,12 @@ HILL CIPHER:
 ##Discrete Logarithm Problem:
 
 ```
+  phi(n) = (p-1)*(q-1)
+  where *p,q* are primes and n = p * q 
+
+```
+
+```
        b
   Y = a  mod p
   
@@ -176,6 +182,9 @@ HILL CIPHER:
   b = dlog  Y
          a,p
 ```
+
+where *p* is a prime number and *a* is a generator of *p*
+
 # SNOW:
 
 to hide a message:
