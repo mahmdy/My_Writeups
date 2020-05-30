@@ -40,8 +40,12 @@ https://gchq.github.io/CyberChef/
 
 
 # OPENSSL:
-
+```
 openssl enc -in msgfile -out binarytext -d -a && openssl rsautl -decrypt -in binarytext -out planetxt -inkey keyfile && cat planetext
+```
+```
+openssh s_client -connect localhost:port
+```
 
 # SQL INJECTION:
 
@@ -100,9 +104,10 @@ objdump
 # HASHCAT:
 
 bruteforce masking attack
+```
 
 hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b FLAG{?a?a?a?a?a}
- 
+ ```
  optional: -w 3
  
 hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
@@ -214,3 +219,44 @@ pybass ip filter
 ```
 X-Forwarded-For: [ip address from the allow list (i used  127.0.0.1 as localhost should normaly be allowed)]
 ```
+
+
+#direct error to null screen (do not show errors)
+
+```
+command 2>/dev/null
+
+```
+where:
+
+stdin – 0 – Standard Input (usually keyboard or file)
+
+stdout – 1 – Standard Output (usually screen)
+
+stderr – 2 – Standard Error (usually screen)
+
+
+#Reverse Hex Dump:
+
+```
+xxd -r file > output
+```
+#SSH
+
+```
+ssh -i [key file path] user@host -p [port number] [command]
+
+```
+
+the [command] will be executed just after loging
+#VI
+
+before every action dont forget the "esc"
+ 
+  i insert
+  :q quit
+  :q! quit without saving
+  :x save and exit
+ 
+
+
