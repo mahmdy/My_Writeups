@@ -97,6 +97,20 @@ it is a 10 charachters password generator with known plane text "728"
 
 directing output  " -o- " to /root/wordlist.lst
 
+# office password crack:
+
+```
+./office2john.py [office document] > [hash file]
+
+```
+the [hash file] is: [office document name]:$office$*2013*100000*256*16*17aacdb40c2cffa4a1c6ec2...
+  
+remove the doucmnet name so the output should be in the form: $office$*2013*100000*256*16*17aacdb40c2cffa4a1c6ec2...
+
+```
+hashcat -m 9600 -o [outputfilename][hash file] [passwordlist
+```
+]
 # REVERSE:
 
 objdump
