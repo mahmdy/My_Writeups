@@ -278,4 +278,16 @@ before every action dont forget the "esc"
   :x save and exit
  
 
+# Privilege escalation and explotitaion:
 
+
+## GTFOBins 
+
+https://gtfobins.github.io/
+
+
+## LinPEAS/WinPEAS (Linux / WIndows Pribilege escalation advisor): 
+
+
+
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
