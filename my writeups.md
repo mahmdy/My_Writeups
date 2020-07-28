@@ -306,3 +306,26 @@ https://gtfobins.github.io/
 
 
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+
+
+
+
+# reconnaissance:
+
+```
+$ nmap [network range]
+
+$ sudo nmap -sS -T4 -A -p- -o [output filename] [IP]
+
+```
+
+```
+$ autorecon [IP
+```
+]
+# web site search:
+
+```
+$ gobuster [dir/file] -u [url] -w [wordlist]
+```
+
