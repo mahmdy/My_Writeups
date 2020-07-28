@@ -39,6 +39,13 @@ https://wiremask.eu/tools/xor-cracker/
 https://gchq.github.io/CyberChef/
 
 
+
+# RSA:
+
+X-RSA :
+
+https://github.com/X-Vector/X-RSA
+
 # OPENSSL:
 ```
 openssl enc -in msgfile -out binarytext -d -a && openssl rsautl -decrypt -in binarytext -out planetxt -inkey keyfile && cat planetext
@@ -118,7 +125,15 @@ hashcat -m 9600 -o [outputfilename][hash file] [passwordlist
 ]
 # REVERSE:
 
-objdump
+ELF: objdump
+
+detect windows files: PEID (PE IDentefier)
+
+windows pe: IDA
+
+Dotnet dotpeek, dnspy
+
+
 
 # HASHCAT:
 
