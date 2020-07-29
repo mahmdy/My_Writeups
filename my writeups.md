@@ -320,9 +320,9 @@ $ sudo nmap -sS -T4 -A -p- -o [output filename] [IP]
 ```
 
 ```
-$ autorecon [IP
+$ autorecon [IP]
 ```
-]
+
 # web site search:
 
 ```
