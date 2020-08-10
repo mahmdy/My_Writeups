@@ -29,6 +29,7 @@ https://morsify.net/
 
 https://morsecode.world/international/translator.html 
 
+https://morsecode.world/international/decoder/audio-decoder-adaptive.html
 
 *XOR online (stream cipher)*
 
@@ -126,6 +127,8 @@ hashcat -m 9600 -o [outputfilename][hash file] [passwordlist
 # REVERSE:
 
 ELF: objdump
+
+Ghidra
 
 detect windows files: PEID (PE IDentefier)
 
@@ -329,3 +332,6 @@ $ autorecon [IP]
 $ gobuster [dir/file] -u [url] -w [wordlist]
 ```
 
+# wardriving
+
+https://wigle.net/
