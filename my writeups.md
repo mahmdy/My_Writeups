@@ -7,7 +7,23 @@ https://www.yeahhub.com/top-steganography-tools-ctf-challenges/
 https://extract.me/
 
 # BINWALK:
-binwalk --dd='.*' filename
+```
+binwalk --dd='.*' [filename]
+binwalk -e [filename]
+```
+**fix wave file**
+
+https://www.hecticgeek.com/fix-wav-header-errors-ubuntu-linux/
+
+```
+sudo apt-get install quelcom
+
+qwavinfo [your-audio.wav]
+
+qwavheaderdump demo.wav
+
+```
+-F for fix
 
 
 # Encoding:
@@ -98,7 +114,10 @@ http://hashcat.net/cap2hccapx
 jhon password file
 
 ```
-jhon --wordlist=*path of the dictinory* the hash file
+jhon --wordlist=[path of the dictinory] [the hash file]
+
+
+john --show [the hash file]
 ```
 johnny
 
@@ -121,9 +140,9 @@ the [hash file] is: [office document name]:$office$*2013*100000*256*16*17aacdb40
 remove the doucmnet name so the output should be in the form: $office$*2013*100000*256*16*17aacdb40c2cffa4a1c6ec2...
 
 ```
-hashcat -m 9600 -o [outputfilename][hash file] [passwordlist
+hashcat -m 9600 -o [outputfilename][hash file] [passwordlist]
 ```
-]
+
 # REVERSE:
 
 ELF: objdump
@@ -149,6 +168,8 @@ hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b FLAG{?a?a?a?a?a}
  
 hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
 
+hashcat -a 3 -w 3 -m 2500 -1 ?u?l?d ?1?1?1?1
+
 -a 0 for dictionary attack
 
 -o path of the output file if needed
@@ -163,6 +184,10 @@ cat /root/.hashcat/hashcat.potfile
 base64 -d test | hexdump -C
 
 base64 -d test | xxd -p
+
+change hex value to a file
+
+xxd -r -p infile > outfile
 
 
 # HASH:
