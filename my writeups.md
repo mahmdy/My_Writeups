@@ -1,222 +1,224 @@
-# STEGNO:
+#STEGNO STRATIGY:
 
-https://www.yeahhub.com/top-steganography-tools-ctf-challenges/
+##Main track:
 
-**fix corrupted compressed file:**
-
-https://extract.me/
-
-# BINWALK:
 ```
-binwalk --dd='.*' [filename]
-binwalk -e [filename]
+$ file [filename]
+$ strings [filename] | grep (-i, -n) [search keyword]
 ```
-**fix wave file**
+
+	-I ignore case (upper / lower)
+	-n string length in numbers
+```
+
+$ hexdump -C [filename] (-n, |head, |tail)
+```
+
+	-n: number of bytes to be shown
+	Head: shows only 1st bytes of the file
+	Tail: shows the ending bytes of the file
+```
+$ exiftool [filename]
+$ binwalk -e [filename]
+```
+	And it is equivalent to:
+```
+$binwalk –dd=”.*” [filename]
+$ foremost [filename]
+$ steghide extract -sf [filename]
+```
+	Works on jpg and audio file
+```
+$stegsolv
+$stegcracker
+$Zsteg
+$stegoveritas
+$pngcheck
+$openstego
+$snow -C -m [the secret message] -p [hiding password] [input file] [output file]
+$snow [C, -Q] -p [the hiding password] [the file name]
+```
+-C OR -Q are used to unhide the message
+
+-p used only in case of using pasword
+
+##Fix corrupted compressed file:
+
+https://extract.me
+
+##Fix Wave File:
 
 https://www.hecticgeek.com/fix-wav-header-errors-ubuntu-linux/
 
 ```
-sudo apt-get install quelcom
-
-qwavinfo [your-audio.wav]
-
-qwavheaderdump demo.wav
-
+$sudo apt-get install quelcom 
+ 
+$qwavinfo [your-audio.wav] 
+ 
+$qwavheaderdump demo.wav 
 ```
+
 -F for fix
 
+##BASE monopelation:
 
-# Encoding:
-*Jsf**k*
-
-http://codertab.com/JsUnFuck
-
-http://www.jsfuck.com/ 
-
-https://copy.sh/brainfuck/text.html 
-
-*Dancing Men Chiper* 
-
-https://www.dcode.fr/dancing-men-cipher 
-
-*Mores Code*
-
-https://morsify.net/
-
-https://morsecode.world/international/translator.html 
-
-https://morsecode.world/international/decoder/audio-decoder-adaptive.html
-
-*XOR online (stream cipher)*
-
-https://wiremask.eu/tools/xor-cracker/
-
-**All encodings**
-
-https://gchq.github.io/CyberChef/
-
-
-
-# RSA:
-
-X-RSA :
-
-https://github.com/X-Vector/X-RSA
-
-# OPENSSL:
-```
-openssl enc -in msgfile -out binarytext -d -a && openssl rsautl -decrypt -in binarytext -out planetxt -inkey keyfile && cat planetext
-```
-```
-openssh s_client -connect localhost:port
-```
-
-# SQL INJECTION:
+ decode base64
 
 ```
-test ' || (select sql from sqlite_master) || '
-
-test '|| (select password from xde43_users where role="admin" ) ||'
+$base64 -d [name of a file contains base64] OR echo -n "text" | base64 -d
 ```
-# WIFI CRACK:
 
+same commands valid for any other base encodings (i.e. base32, base58....)
 
-user *wi.bat* on windows to collect wifi SSID and passwords
+##from hexdump to a file or filr to hexdump:
 
+```
+$xxd -r -p [hexfile] > [file]
+$xxd -p [file] > [hex output file]
+```
 
-*to catpture hadshack:*
-	
-	wifite -i wlan1
-	
-*convert handshack file to hashcat format:*
-	
-	aircrack-ng -J file handshack.cap
-	
-	this would genereate file.hccap
+##File carving:
 
-convert hccap file to password crackers format
+``
+#dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
+``
 
-**	jhon the ripper:**	
+#PASWORD CRACKING:
 
-hccap2jhon file.hccap > file.txt
+office2john (regularly in /usr/share/john/office2john.py)
 
-this would generat txt file to be cracked by jhon the ripper
+```
+$python office2john.py [office file] > [hash file] 
+```
 
-*hashcat format:*
+rar2john (regularly in /usr/sbin/rar2john)
 
-cap2hccapx "the cap file(handcheck)" output.hccapx
-	
-	                              **OR**
+```
+$rar2john [rar file] > [hash file]
+```
 
+clean the hash file to start with: $[filetype]$
+
+##John:
+```
+$ john --wordlist=[path of password file] [the hash file]
+$ john –show [the hash file]
+```
+
+##hashcat:
+```
+$hashcat -a [1,2,3] -D [1,2,3] -w [1,2,3,4]  -m [hash related number] [hash] [cracking pattern]
+```
+
+###-a for attack mode:
+
+0 for wordlist 
+
+1 more than one wordlist
+
+3 brute force
+
+###-D fore device to use:
+
+2 for GPU
+
+3 FPGA,DSP
+
+###-w for workload
+
+3 high performance
+
+4 nightmare.
+
+In brute-force attack mode u can specify each character type and the number of characters, for mixing multi-character sets to use:
+
+?a repeated to the length of the password (this include upper, lower, numerical and special characters)
+
+to specify costume characters use: -1 followed by many ?’s, each specify a character set (i.e. ?u?l?1?s, ?dabcde)
+
+the 1st example uses alphanumeric and special characters
+
+the 2nd one uses numbers and only letters abcde
+
+you can use known plane text such as FLAG{?a?a?a?a}
+
+more info in:
+
+https://hashcat.net/wiki/doku.php?id=mask_attack
+
+##Password list generation:
+
+```
+$crunch n m [list of characters used] -o [output file]
+```
+n is the minimum length of the password generated
+
+m is the maximum length of the password generated
+
+```
+$crunch n m -t [pattern] -o [output file]
+```
+###-t to use a pattern:
+
+@ for each lower case
+
+, for each upper case
+
+% for each number
+
+^ for each symbol
+
+###Piping crunsh with john:
+
+```
+$ jhon crunch [ full command format] [the hash file]
+```
+
+#WIFI CRACK:
+
+**user wi.bat on windows to collect wifi SSID and passwords to catpture hadshack: wifite -i wlan1**
+
+##convert handshack file to hashcat format:
+
+```
+#aircrack-ng -J file handshack.cap 
+```
+
+this would genereate file.hccap 
+
+##convert hccap file to password crackers format
+
+##Jhon The Riper format:
+```
+$ hccap2jhon file.hccap > file.txt 
+```
+this would generate txt file to be cracked by jhon the ripper 
+
+##hashcat format: 
+```
+$ cap2hccapx [hashfile].cap [output].hccapx
+```
+                              **OR** 
+			      
 http://hashcat.net/cap2hccapx
-	
-# PASSWORD CRACKING:
-jhon password file
 
-```
-jhon --wordlist=[path of the dictinory] [the hash file]
+#CRYPTOGRAPHY:
 
+www.dcode.fr 
 
-john --show [the hash file]
-```
-johnny
-
-crunch "minimum lignth" "maximum linth" "cherchterset"
-```
-crunch 10 10 -t @@@@@@0728 -o /root/birthdaywordlist.lst
-```
-it is a 10 charachters password generator with known plane text "728"
-
-directing output  " -o- " to /root/wordlist.lst
-
-# office password crack:
-
-```
-./office2john.py [office document] > [hash file]
-
-```
-the [hash file] is: [office document name]:$office$*2013*100000*256*16*17aacdb40c2cffa4a1c6ec2...
-  
-remove the doucmnet name so the output should be in the form: $office$*2013*100000*256*16*17aacdb40c2cffa4a1c6ec2...
-
-```
-hashcat -m 9600 -o [outputfilename][hash file] [passwordlist]
-```
-
-# REVERSE:
-
-ELF: objdump
-
-Ghidra
-
-detect windows files: PEID (PE IDentefier)
-
-windows pe: IDA
-
-Dotnet dotpeek, dnspy
-
-
-
-# HASHCAT:
-
-bruteforce masking attack
-```
-
-hashcat -a 3 -m 0 85230538de31d48a4cf863b6abfed82b FLAG{?a?a?a?a?a}
- ```
- optional: -w 3
- 
-hashcat -a 3 -w 3 -m 2500 all.hccapx ?l?l?l?l?d?d?d?d
-
-hashcat -a 3 -w 3 -m 2500 -1 ?u?l?d ?1?1?1?1
-
--a 0 for dictionary attack
-
--o path of the output file if needed
-
-
-list of cracked hashes:
-
-cat /root/.hashcat/hashcat.potfile
-
-# BASE monopelation:
-
-base64 -d test | hexdump -C
-
-base64 -d test | xxd -p
-
-change hex value to a file
-
-xxd -r -p infile > outfile
-
-
-# HASH:
-
-https://hashkiller.co.uk/
-
-https://www.tunnelsup.com/hash-analyzer/
-
-
-# CRYPTOGRAPHY:
-
-www.dcode.fr
-
-cryptii.com
+cryptii.com 
 
 quipqiup.com 
 
 planetcalc.com
 
-sprenger.com   (books)
+ **if IC (index of coincidence) is ARROUND .038 the encryption is POLYALPHAPITIC u might use dcode fr to calculate the key length   if IC is ARROUND .067 the encryption is MONOALPHAPTIIC**
+ 
+  **if LETTER FREQUENCY is LIKE ENGLISH the encryption is TRANSPOSITION**
+  
+  **if LETTER FREQUENCY is not LIKE ENGLISH the encryption is SHIFT CIPHER**
 
 
-
-* if IC (index of coincedance) is ARROUND .038 the encryption is POLYALPHAPITIC
-
-u might use dcode fr to calculate the key lingth
-* if IC is ARROUND .067 the encryption is MONOALPHAPTIIC
-	* if LETTER FREQUANCY is LIKE ENGLISH the encryption is TRANSPOSITION
-	* if LETTER FREQUANCY is not LIKE ENGLISH the encryption is SHIFT CIPHER
 ```
 HILL CIPHER:
 			       |C0|    |a   b|   |M0|		|C2|    |a   b|   |M2|
@@ -253,110 +255,124 @@ HILL CIPHER:
 
 where *p* is a prime number and *a* is a generator of *p*
 
-# SNOW:
 
-to hide a message:
-```
-snow -C -m "the secrit message" -p "password" inputfile outputfile
-```
+##XOR online (stream cipher)
 
-to unhide message:
-```
-snow -C -p "password" outputfile
-```
-or -Q
+https://wiremask.eu/tools/xor-cracker/ 
 
--p is only needed if you are going to use a password
+##RSA:
 
+**X-RSA : https://github.com/X-Vector/X-RSA**
 
-# File carving:
+##OPENSSL:
 
-dd if=./file_with_a_file_in_it.xxx of=./extracted_file.xxx bs=1 skip=[befor the start of the file in bytes] count=[file lingh]
-
-
-
-# Web:
-
-pybass ip filter 
-```
-X-Forwarded-For: [ip address from the allow list (i used  127.0.0.1 as localhost should normaly be allowed)]
-```
-
-
-#direct error to null screen (do not show errors)
-
-```
-command 2>/dev/null
-
-```
-where:
-
-stdin – 0 – Standard Input (usually keyboard or file)
-
-stdout – 1 – Standard Output (usually screen)
-
-stderr – 2 – Standard Error (usually screen)
-
-
-#Reverse Hex Dump:
-
-```
-xxd -r file > output
-```
-#SSH
-
-```
-ssh -i [key file path] user@host -p [port number] [command]
-
-```
-
-the [command] will be executed just after loging
-#VI
-
-before every action dont forget the "esc"
+ To encrypt a message:
  
-  i insert
-  :q quit
-  :q! quit without saving
-  :x save and exit
+ ```
+$openssl enc -e –[encryption algorithm] -in “plan text msg” -k “key” -out [encryptedfilename] 
+```
+
+To decrypt an encoded message:
+
+```
+openssl enc -d –[encryption algorithm] -in [encryptedfilename] -k “key” -out [plane txt filename]
+```
+
+#Encoding:
+
+**All encodings**
+
+ https://gchq.github.io/CyberChef/
  
+###jsf**k
 
-# Privilege escalation and explotitaion:
+ http://codertab.com/JsUnFuck http://www.jsfuck.com/ 
+ 
+https://copy.sh/brainfuck/text.html 
+
+###Dancing Men Chiper
+
+https://www.dcode.fr/dancing-men-cipher 
+
+###Mores Code
+
+https://morsify.net/ 
+
+https://morsecode.world/international/translator.html https://morsecode.world/international/decoder/audio-decoderadaptive.html
 
 
-## GTFOBins 
+##HASHES:
+
+https://hashkiller.co.uk/  
+
+https://www.tunnelsup.com/hash-analyzer/
+
+
+#reconnaissance:
+
+```
+$ nmap [network range] 
+ 
+$ sudo nmap -sS -T4 -A -p- -o [output filename] [IP] 
+ 
+$ autorecon [IP] 
+```
+
+###web site search:
+
+```
+$ gobuster [dir/file] -u [url] -w [wordlist] 
+```
+
+#Privilege escalation and explotitaion:
+
+##GTFOBins
 
 https://gtfobins.github.io/
 
+###LinPEAS/WinPEAS (Linux / WIndows Pribilege escalation advisor):
 
-## LinPEAS/WinPEAS (Linux / WIndows Pribilege escalation advisor): 
-
-
-
-https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+https://github.com/carlospolop/privilege-escalation-awesomescripts-suite 
 
 
+##wardriving:
+
+https://wigle.net
+
+#REVERSE:
+
+ELF: objdump Ghidra detect windows files: PEID (PE IDentefier) windows pe: IDA 
+Dotnet dotpeek, dnspy
 
 
-# reconnaissance:
+#Web:
 
+pybass ip filter
+
+X-Forwarded-For: [ip address from the allow list (i used  127.0.0.1 as localhost should normaly be allowed)] 
+
+#SQL INJECTION:
 ```
-$ nmap [network range]
-
-$ sudo nmap -sS -T4 -A -p- -o [output filename] [IP]
-
-```
-
-```
-$ autorecon [IP]
-```
-
-# web site search:
-
-```
-$ gobuster [dir/file] -u [url] -w [wordlist]
+test ' || (select sql from sqlite_master) || ' 
+test '|| (select password from xde43_users where role="admin" ) ||'
 ```
 
-# wardriving
+#SSH:
 
-https://wigle.net/
+```
+ssh -i [key file path] user@host -p [port number] [command] 
+ ```
+ 
+the [command] will be executed just after loging
+
+ #VI :
+ 
+before every action don’t forget the "esc" 
+
+i insert
+
+ :q quit 
+ 
+:q! quit without saving
+
+:x save and exit
