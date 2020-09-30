@@ -1,6 +1,6 @@
-#STEGNO STRATIGY:
+# STEGNO STRATIGY:
 
-##Main track:
+## Main track:
 
 ```
 $ file [filename]
@@ -42,11 +42,11 @@ $snow [C, -Q] -p [the hiding password] [the file name]
 
 -p used only in case of using pasword
 
-##Fix corrupted compressed file:
+## Fix corrupted compressed file:
 
 https://extract.me
 
-##Fix Wave File:
+## Fix Wave File:
 
 https://www.hecticgeek.com/fix-wav-header-errors-ubuntu-linux/
 
@@ -60,7 +60,7 @@ $qwavheaderdump demo.wav
 
 -F for fix
 
-##BASE monopelation:
+## Base monopelation:
 
  decode base64
 
@@ -70,20 +70,20 @@ $base64 -d [name of a file contains base64] OR echo -n "text" | base64 -d
 
 same commands valid for any other base encodings (i.e. base32, base58....)
 
-##from hexdump to a file or filr to hexdump:
+## from hexdump to a file or filr to hexdump:
 
 ```
 $xxd -r -p [hexfile] > [file]
 $xxd -p [file] > [hex output file]
 ```
 
-##File carving:
+## File carving:
 
 ``
 #dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
 ``
 
-#PASWORD CRACKING:
+# PASWORD CRACKING:
 
 office2john (regularly in /usr/share/john/office2john.py)
 
@@ -99,18 +99,18 @@ $rar2john [rar file] > [hash file]
 
 clean the hash file to start with: $[filetype]$
 
-##John:
+## John:
 ```
 $ john --wordlist=[path of password file] [the hash file]
 $ john –show [the hash file]
 ```
 
-##hashcat:
+## hashcat:
 ```
 $hashcat -a [1,2,3] -D [1,2,3] -w [1,2,3,4]  -m [hash related number] [hash] [cracking pattern]
 ```
 
-###-a for attack mode:
+### -a for attack mode:
 
 0 for wordlist 
 
@@ -118,13 +118,13 @@ $hashcat -a [1,2,3] -D [1,2,3] -w [1,2,3,4]  -m [hash related number] [hash] [cr
 
 3 brute force
 
-###-D fore device to use:
+### -D fore device to use:
 
 2 for GPU
 
 3 FPGA,DSP
 
-###-w for workload
+### -w for workload
 
 3 high performance
 
@@ -146,7 +146,7 @@ more info in:
 
 https://hashcat.net/wiki/doku.php?id=mask_attack
 
-##Password list generation:
+## Password list generation:
 
 ```
 $crunch n m [list of characters used] -o [output file]
@@ -158,7 +158,7 @@ m is the maximum length of the password generated
 ```
 $crunch n m -t [pattern] -o [output file]
 ```
-###-t to use a pattern:
+### -t to use a pattern:
 
 @ for each lower case
 
@@ -168,17 +168,17 @@ $crunch n m -t [pattern] -o [output file]
 
 ^ for each symbol
 
-###Piping crunsh with john:
+### Piping crunsh with john:
 
 ```
 $ jhon crunch [ full command format] [the hash file]
 ```
 
-#WIFI CRACK:
+# WIFI CRACK:
 
 **user wi.bat on windows to collect wifi SSID and passwords to catpture hadshack: wifite -i wlan1**
 
-##convert handshack file to hashcat format:
+## convert handshack file to hashcat format:
 
 ```
 #aircrack-ng -J file handshack.cap 
@@ -186,15 +186,15 @@ $ jhon crunch [ full command format] [the hash file]
 
 this would genereate file.hccap 
 
-##convert hccap file to password crackers format
+## convert hccap file to password crackers format
 
-##Jhon The Riper format:
+## Jhon The Riper format:
 ```
 $ hccap2jhon file.hccap > file.txt 
 ```
 this would generate txt file to be cracked by jhon the ripper 
 
-##hashcat format: 
+## hashcat format: 
 ```
 $ cap2hccapx [hashfile].cap [output].hccapx
 ```
@@ -202,7 +202,7 @@ $ cap2hccapx [hashfile].cap [output].hccapx
 			      
 http://hashcat.net/cap2hccapx
 
-#CRYPTOGRAPHY:
+# CRYPTOGRAPHY:
 
 www.dcode.fr 
 
@@ -234,7 +234,7 @@ HILL CIPHER:
 			M1=gC0+hC1			  &	M3=gC2+hC3
 
 ```
-##Discrete Logarithm Problem:
+## Discrete Logarithm Problem:
 
 ```
   phi(n) = (p-1)*(q-1)
@@ -256,17 +256,17 @@ HILL CIPHER:
 where *p* is a prime number and *a* is a generator of *p*
 
 
-##XOR online (stream cipher)
+## XOR online (stream cipher)
 
 https://wiremask.eu/tools/xor-cracker/ 
 
-##RSA:
+## RSA:
 
 **X-RSA : https://github.com/X-Vector/X-RSA**
 
-##OPENSSL:
+## OPENSSL:
 
- To encrypt a message:
+To encrypt a message:
  
  ```
 $openssl enc -e –[encryption algorithm] -in “plan text msg” -k “key” -out [encryptedfilename] 
@@ -278,37 +278,37 @@ To decrypt an encoded message:
 openssl enc -d –[encryption algorithm] -in [encryptedfilename] -k “key” -out [plane txt filename]
 ```
 
-#Encoding:
+# Encoding:
 
 **All encodings**
 
  https://gchq.github.io/CyberChef/
  
-###jsf**k
+### jsf**k
 
  http://codertab.com/JsUnFuck http://www.jsfuck.com/ 
  
 https://copy.sh/brainfuck/text.html 
 
-###Dancing Men Chiper
+### Dancing Men Chiper
 
 https://www.dcode.fr/dancing-men-cipher 
 
-###Mores Code
+### Mores Code
 
 https://morsify.net/ 
 
 https://morsecode.world/international/translator.html https://morsecode.world/international/decoder/audio-decoderadaptive.html
 
 
-##HASHES:
+## HASHES:
 
 https://hashkiller.co.uk/  
 
 https://www.tunnelsup.com/hash-analyzer/
 
 
-#reconnaissance:
+# Reconnaissance:
 
 ```
 $ nmap [network range] 
@@ -318,46 +318,46 @@ $ sudo nmap -sS -T4 -A -p- -o [output filename] [IP]
 $ autorecon [IP] 
 ```
 
-###web site search:
+### web site search:
 
 ```
 $ gobuster [dir/file] -u [url] -w [wordlist] 
 ```
 
-#Privilege escalation and explotitaion:
+# Privilege escalation and explotitaion:
 
-##GTFOBins
+## GTFOBins
 
 https://gtfobins.github.io/
 
-###LinPEAS/WinPEAS (Linux / WIndows Pribilege escalation advisor):
+### LinPEAS/WinPEAS (Linux / WIndows Pribilege escalation advisor):
 
 https://github.com/carlospolop/privilege-escalation-awesomescripts-suite 
 
 
-##wardriving:
+## wardriving:
 
 https://wigle.net
 
-#REVERSE:
+# REVERSE:
 
 ELF: objdump Ghidra detect windows files: PEID (PE IDentefier) windows pe: IDA 
 Dotnet dotpeek, dnspy
 
 
-#Web:
+# Web:
 
 pybass ip filter
 
 X-Forwarded-For: [ip address from the allow list (i used  127.0.0.1 as localhost should normaly be allowed)] 
 
-#SQL INJECTION:
+# SQL INJECTION:
 ```
 test ' || (select sql from sqlite_master) || ' 
 test '|| (select password from xde43_users where role="admin" ) ||'
 ```
 
-#SSH:
+# SSH:
 
 ```
 ssh -i [key file path] user@host -p [port number] [command] 
@@ -365,13 +365,13 @@ ssh -i [key file path] user@host -p [port number] [command]
  
 the [command] will be executed just after loging
 
- #VI :
+# VI :
  
 before every action don’t forget the "esc" 
 
 i insert
 
- :q quit 
+:q quit 
  
 :q! quit without saving
 
