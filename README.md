@@ -29,18 +29,26 @@ $ steghide extract -sf [filename]
 ```
 	Works on jpg and audio file
 ```
-$stegsolv
-$stegcracker
-$Zsteg
-$stegoveritas
-$pngcheck
-$openstego
-$snow -C -m [the secret message] -p [hiding password] [input file] [output file]
-$snow [C, -Q] -p [the hiding password] [the file name]
+$ stegsolv
+$ stegcracker
+$ Zsteg
+$ stegoveritas
+$ pngcheck
+$ openstego
+$ snow -C -m [the secret message] -p [hiding password] [input file] [output file]
+$ snow [C, -Q] -p [the hiding password] [the file name]
 ```
 -C OR -Q are used to unhide the message
 
 -p used only in case of using pasword
+
+Getting snow:
+```
+$ wget http://www.darkside.com.au/snow/snow-20130616.tar.gz   
+$ tar xvzf snow-20130616.tar.gz && cd snow-20130616   
+$ make
+$ sudo cp snow /usr/bin/snow  
+```
 
 ## Fix corrupted compressed file:
 
@@ -51,11 +59,11 @@ https://extract.me
 https://www.hecticgeek.com/fix-wav-header-errors-ubuntu-linux/
 
 ```
-$sudo apt-get install quelcom 
+$ sudo apt-get install quelcom 
  
-$qwavinfo [your-audio.wav] 
+$ qwavinfo [your-audio.wav] 
  
-$qwavheaderdump demo.wav 
+$ qwavheaderdump demo.wav 
 ```
 
 -F for fix
@@ -65,7 +73,7 @@ $qwavheaderdump demo.wav
  decode base64
 
 ```
-$base64 -d [name of a file contains base64] OR echo -n "text" | base64 -d
+$ base64 -d [name of a file contains base64] OR echo -n "text" | base64 -d
 ```
 
 same commands valid for any other base encodings (i.e. base32, base58....)
@@ -73,14 +81,14 @@ same commands valid for any other base encodings (i.e. base32, base58....)
 ## from hexdump to a file or filr to hexdump:
 
 ```
-$xxd -r -p [hexfile] > [file]
-$xxd -p [file] > [hex output file]
+$ xxd -r -p [hexfile] > [file]
+$ xxd -p [file] > [hex output file]
 ```
 
 ## File carving:
 
 ``
-#dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
+# dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
 ``
 
 # PASWORD CRACKING:
@@ -88,13 +96,13 @@ $xxd -p [file] > [hex output file]
 office2john (regularly in /usr/share/john/office2john.py)
 
 ```
-$python office2john.py [office file] > [hash file] 
+$ python office2john.py [office file] > [hash file] 
 ```
 
 rar2john (regularly in /usr/sbin/rar2john)
 
 ```
-$rar2john [rar file] > [hash file]
+$ rar2john [rar file] > [hash file]
 ```
 
 clean the hash file to start with: $[filetype]$
