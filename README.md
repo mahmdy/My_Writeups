@@ -138,6 +138,10 @@ $hashcat -a [1,2,3] -D [1,2,3] -w [1,2,3,4]  -m [hash related number] [hash] [cr
 
 4 nightmare.
 
+###  -m hash type
+
+you can refare to https://hashcat.net/wiki/doku.php?id=example_hashes for hashs formats
+
 In brute-force attack mode u can specify each character type and the number of characters, for mixing multi-character sets to use:
 
 ?a repeated to the length of the password (this include upper, lower, numerical and special characters)
