@@ -218,11 +218,11 @@ http://hashcat.net/cap2hccapx
 
 www.dcode.fr 
 
-cryptii.com 
+http://cryptii.com 
 
-quipqiup.com 
+http://quipqiup.com 
 
-planetcalc.com
+http://planetcalc.com
 
  **if IC (index of coincidence) is ARROUND .038 the encryption is POLYALPHAPITIC u might use dcode fr to calculate the key length   if IC is ARROUND .067 the encryption is MONOALPHAPTIIC**
  
