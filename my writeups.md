@@ -146,6 +146,10 @@ more info in:
 
 https://hashcat.net/wiki/doku.php?id=mask_attack
 
+### -m for the hash type
+
+https://hashcat.net/wiki/doku.php?id=example_hashes
+
 ## Password list generation:
 
 ```
