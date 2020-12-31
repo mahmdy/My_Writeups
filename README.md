@@ -87,9 +87,9 @@ $ xxd -p [file] > [hex output file]
 
 ## File carving:
 
-``
+```
 # dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
-``
+```
 
 # PASWORD CRACKING:
 
