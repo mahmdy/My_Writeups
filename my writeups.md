@@ -79,11 +79,68 @@ $xxd -p [file] > [hex output file]
 
 ## File carving:
 
-``
+```
 #dd if=[file_with_a_file_in_it] of=[extracted_file] bs=1 skip= [befor the start of the file in bytes] count=[file length in bytes]
-``
+```
 
 # PASWORD CRACKING:
+
+##unprotect excel worksheet
+
+to unprotect old xls protected sheet use the follwing link:
+
+http://www.excelsupersite.com/how-to-unprotect-an-excel-spreadsheet-if-you-have-lost-your-password/
+
+
+press ALT+F11
+
+Double click on the protected sheet
+
+paste this code and press run:
+
+```
+Sub PasswordBreaker()
+Dim i As Integer, j As Integer, k As Integer
+Dim l As Integer, m As Integer, n As Integer
+Dim i1 As Integer, i2 As Integer, i3 As Integer
+Dim i4 As Integer, i5 As Integer, i6 As Integer
+On Error Resume Next
+For i = 65 To 66: For j = 65 To 66: For k = 65 To 66
+For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66
+For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66
+For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126
+ActiveSheet.Unprotect Chr(i) & Chr(j) & Chr(k) & _
+Chr(l) & Chr(m) & Chr(i1) & Chr(i2) & Chr(i3) & _
+Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)
+If ActiveSheet.ProtectContents = False Then
+MsgBox "One usable password is " & Chr(i) & Chr(j) & _
+Chr(k) & Chr(l) & Chr(m) & Chr(i1) & Chr(i2) & _
+Chr(i3) & Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)
+Exit Sub
+End If
+Next: Next: Next: Next: Next: Next
+Next: Next: Next: Next: Next: Next
+End Sub
+```
+and for xlsx files follow the steps:
+
+1- rename the file to .zip
+
+2- open it with 7z
+
+3- open the xl folder, then the worksheets folder
+
+4- for every protected worksheet do:
+
+	4-1- open the xml file in notpad
+	
+	4-2- search for the "<sheetProtection algorithmName " and remove all the tag to scenarios=”1″/>
+	
+	4-3 save the xml file and replace the one in the 7z with it
+	
+finally the protection removed
+
+##Crack office file password:
 
 office2john (regularly in /usr/share/john/office2john.py)
 
