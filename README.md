@@ -49,6 +49,9 @@ $ tar xvzf snow-20130616.tar.gz && cd snow-20130616
 $ make
 $ sudo cp snow /usr/bin/snow  
 ```
+### BruteForcing snow password
+
+https://github.com/0xMohammed/SnowCracker
 
 ## Fix corrupted compressed file:
 
