@@ -42,6 +42,10 @@ $snow [C, -Q] -p [the hiding password] [the file name]
 
 -p used only in case of using pasword
 
+### BruteForcing SNOW password
+
+https://github.com/0xMohammed/SnowCracker
+
 ## Fix corrupted compressed file:
 
 https://extract.me
