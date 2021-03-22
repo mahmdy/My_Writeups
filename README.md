@@ -71,6 +71,20 @@ $ qwavheaderdump demo.wav
 
 -F for fix
 
+## Memory Forensics
+
+### to get the operating system
+```
+$ volatility -f [image filename] imageinfo
+```
+### other volatility commands
+
+pslist, pstree, psdump, memdump, cmdline, consoles, vadtree, vaddump
+
+full listing of volatility commands and help in this link:
+
+https://github.com/volatilityfoundation/volatility/wiki/Command-Reference
+
 ## Base monopelation:
 
  decode base64
