@@ -96,6 +96,7 @@ use powershell to extract the log to csv file
 ```
 > EvtxECmd.exe -f [the log file] -csv [ output foldername] [output.csv]
 ```
+more help is here:   https://binaryforay.blogspot.com/2019/04/introducing-evtxecmd.html
 
 ## Base monopelation:
 
