@@ -85,6 +85,18 @@ full listing of volatility commands and help in this link:
 
 https://github.com/volatilityfoundation/volatility/wiki/Command-Reference
 
+### Windows evenlogs forensics:
+
+parsing log file using Eric Zimmerman tool "EvtxECmd"
+
+https://ericzimmerman.github.io/#!index.md
+
+use powershell to extract the log to csv file
+
+```
+> EvtxECmd.exe -f [the log file] -csv [ output foldername] [output.csv]
+```
+
 ## Base monopelation:
 
  decode base64
