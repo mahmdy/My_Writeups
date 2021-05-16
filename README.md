@@ -435,6 +435,14 @@ https://gtfobins.github.io/
 https://github.com/carlospolop/privilege-escalation-awesomescripts-suite 
 
 
+## Network packet analysis
+
+wiresharek OR NetworkMiner
+
+https://www.netresec.com/?page=networkminer
+
+
+
 ## wardriving:
 
 https://wigle.net
