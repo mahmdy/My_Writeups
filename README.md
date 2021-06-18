@@ -246,6 +246,10 @@ more info in:
 
 https://hashcat.net/wiki/doku.php?id=mask_attack
 
+## Other zip file crackers
+
+fcrackzip
+
 ## Password list generation:
 
 ```
