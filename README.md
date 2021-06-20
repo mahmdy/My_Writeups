@@ -251,6 +251,13 @@ https://hashcat.net/wiki/doku.php?id=mask_attack
 
 fcrackzip
 
+```
+$ fcrackzip -D -u -p [wordlist] [file.zip]
+```
+
+-D dictenory 
+-B bruteforce
+
 ## Password list generation:
 
 ```
