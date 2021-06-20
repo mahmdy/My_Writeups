@@ -35,6 +35,7 @@ $ Zsteg
 $ stegoveritas
 $ pngcheck
 $ openstego
+$ deepsound [windows]
 $ snow -C -m [the secret message] -p [hiding password] [input file] [output file]
 $ snow [C, -Q] -p [the hiding password] [the file name]
 ```
@@ -276,6 +277,11 @@ $crunch n m -t [pattern] -o [output file]
 
 ```
 $ jhon crunch [ full command format] [the hash file]
+```
+## extract word list from strings:
+
+```
+$ strings [filename] |sed ' s/ *$//g' > [wordlist file]
 ```
 
 # WIFI CRACK:
