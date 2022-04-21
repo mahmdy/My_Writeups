@@ -501,3 +501,9 @@ i insert
 :q! quit without saving
 
 :x save and exit
+
+# creat md5sume of string:
+
+```
+echo -n '[string]' | md5sum
+```
