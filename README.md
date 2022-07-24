@@ -508,7 +508,7 @@ i insert
 echo -n '[string]' | md5sum
 ```
 Contacts:
-```
+
 mhamdy@gmail.com
 https://www.linkedin.com/in/mahmoud-hamdy/
-```
+
