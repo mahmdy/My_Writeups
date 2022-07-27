@@ -24,6 +24,7 @@ $ binwalk -e [filename]
 	And it is equivalent to:
 ```
 $binwalk –dd=”.*” [filename]
+$binwalk -M --dd=".*" [filename]
 $ foremost [filename]
 $ steghide extract -sf [filename]
 ```
@@ -33,7 +34,7 @@ $ stegsolv
 $ stegcracker
 $ Zsteg
 $ stegoveritas
-$ pngcheck
+$ pngcheck  replaced by "stegseek"
 $ openstego
 $ deepsound [windows]
 $ snow -C -m [the secret message] -p [hiding password] [input file] [output file]
