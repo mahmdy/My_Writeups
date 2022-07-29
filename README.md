@@ -23,18 +23,26 @@ $ binwalk -e [filename]
 ```
 	And it is equivalent to:
 ```
-$binwalk –dd=”.*” [filename]
-$binwalk -M --dd=".*" [filename]
+$ binwalk –dd=”.*” [filename]
+$ binwalk -M --dd=".*" [filename]
 $ foremost [filename]
 $ steghide extract -sf [filename]
 ```
 	Works on jpg and audio file
 ```
 $ stegsolv
-$ stegcracker
+$ stegcracker  replaced by "stegseek" 
+https://github.com/RickdeJager/stegseek
+```
+$ stegseek --seed [file.jpg] scan the file for possible encrypted hidden files
+
+$ stegseek [file.jpg] bruteforce attack
+
+$ stegseek [file.jpg] [wordlist]
+```
 $ Zsteg
 $ stegoveritas
-$ pngcheck  replaced by "stegseek"
+$ pngcheck 
 $ openstego
 $ deepsound [windows]
 $ snow -C -m [the secret message] -p [hiding password] [input file] [output file]
