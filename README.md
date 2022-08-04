@@ -23,7 +23,7 @@ $ binwalk -e [filename]
 ```
 	And it is equivalent to:
 ```
-$ binwalk –dd=”.*” [filename]
+$ binwalk -–dd=”.*” [filename]
 $ binwalk -M --dd=".*" [filename]
 $ foremost [filename]
 $ steghide extract -sf [filename]
