@@ -516,6 +516,8 @@ i insert
 ```
 echo -n '[string]' | md5sum
 ```
+# Code Beautifier:
+https://beautifier.io/
 Contacts:
 
 mhamdy@gmail.com
