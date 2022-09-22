@@ -518,7 +518,7 @@ echo -n '[string]' | md5sum
 ```
 # Code Beautifier:
 https://beautifier.io/
-Contacts:
+# Contacts:
 
 mhamdy@gmail.com
 https://www.linkedin.com/in/mahmoud-hamdy/
