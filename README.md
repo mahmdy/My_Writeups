@@ -4,11 +4,11 @@
 
 ```
 $ file [filename]
-$ strings [filename] | grep (-i, -n) [search keyword]
+$ strings [filename] | grep (-i, -E) [search keyword]
 ```
 
 	-I ignore case (upper / lower)
-	-n string length in numbers
+	-E '{number,}' string length in number
 ```
 
 $ hexdump -C [filename] (-n, |head, |tail)
