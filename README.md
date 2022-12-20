@@ -518,6 +518,27 @@ echo -n '[string]' | md5sum
 ```
 # Code Beautifier:
 https://beautifier.io/
+
+# wifi cracking:
+
+## CAP file:
+
+1st convert the cap file to match the hashcat mode 22000 using
+
+```
+$ hcxpcapngtool -o [the output file name] [the cap file name]
+```
+
+2nd use hascat mode 22000, same as the PMKID wifi cracking
+
+```
+hashcat -a [1,2,3] -w [device ID] -m 22000 OR 22001 [the handshake file name]
+
+```
+
+
+
+
 # Contacts:
 
 mhamdy@gmail.com
