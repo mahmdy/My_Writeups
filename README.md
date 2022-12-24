@@ -402,6 +402,9 @@ The public key is n and e, the private key is n and d.
 
 **X-RSA : https://github.com/X-Vector/X-RSA**
 
+RSA Calculator:
+
+***https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html***
 ## OPENSSL:
 
 To encrypt a message:
