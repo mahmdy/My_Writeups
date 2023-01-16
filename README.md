@@ -302,7 +302,7 @@ $ strings [filename] |sed ' s/ *$//g' > [wordlist file]
 
 # WIFI CRACK:
 
-**user wi.bat on windows to collect wifi SSID and passwords to catpture hadshack: wifite -i wlan1**
+**user wi.bat on windows to collect wifi SSID and passwords. To catpture hadshack: wifite -i wlan1**
 
 ## convert handshack file to hashcat format:
 
@@ -321,12 +321,20 @@ $ hccap2jhon file.hccap > file.txt
 this would generate txt file to be cracked by jhon the ripper 
 
 ## hashcat format: 
+
+1st convert the cap file to match the hashcat mode 22000 using
+
 ```
-$ cap2hccapx [hashfile].cap [output].hccapx
+$ hcxpcapngtool -o [the output file name] [the cap file name]
 ```
-                              **OR** 
-			      
-http://hashcat.net/cap2hccapx
+
+2nd use hascat mode 22000, same as the PMKID wifi cracking
+
+```
+hashcat -a [1,2,3] -w [device ID] -m 22000 OR 22001 [the handshake file name]
+
+```
+
 
 # CRYPTOGRAPHY:
 
@@ -534,22 +542,6 @@ echo -n '[string]' | md5sum
 # Code Beautifier:
 https://beautifier.io/
 
-# wifi cracking:
-
-## CAP file:
-
-1st convert the cap file to match the hashcat mode 22000 using
-
-```
-$ hcxpcapngtool -o [the output file name] [the cap file name]
-```
-
-2nd use hascat mode 22000, same as the PMKID wifi cracking
-
-```
-hashcat -a [1,2,3] -w [device ID] -m 22000 OR 22001 [the handshake file name]
-
-```
 
 
 
