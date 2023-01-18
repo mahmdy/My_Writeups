@@ -238,6 +238,11 @@ $hashcat -a [1,2,3] -D [1,2,3] -w [1,2,3,4]  -m [hash related number] [hash] [cr
 
 ###  -m hash type
 
+### --increment
+
+if spacifing spacific cherachterset use it with --increment that would start from the 1 cherchter password tell the end of spacified lingth 
+Example: ?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d --increment this will start from one digit password tell 64 digits password
+
 you can refare to https://hashcat.net/wiki/doku.php?id=example_hashes for hashs formats
 
 In brute-force attack mode u can specify each character type and the number of characters, for mixing multi-character sets to use:
