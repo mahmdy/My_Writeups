@@ -339,6 +339,14 @@ this would generate txt file to be cracked by jhon the ripper
 $ hcxpcapngtool -o [the output file name] [the cap file name]
 ```
 
+Also you can use
+
+```
+$ aircrack-ng -j [the cap file]
+```
+this also concert the cap file to hashcat format
+
+
 2nd use hascat mode 22000, same as the PMKID wifi cracking
 
 ```
