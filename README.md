@@ -33,7 +33,10 @@ $ steghide extract -sf [filename]
 $ stegsolv
 $ stegcracker  replaced by "stegseek" 
 https://github.com/RickdeJager/stegseek
+$ stegbrute --file-name [filename] --wordlist [word list]
 ```
+both stecracker, stegbrute bruteforce steghide password
+
 $ stegseek --seed [file.jpg] scan the file for possible encrypted hidden files
 
 $ stegseek [file.jpg] bruteforce attack
