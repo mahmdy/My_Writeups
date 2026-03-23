@@ -98,6 +98,10 @@ full listing of volatility commands and help in this link:
 
 https://github.com/volatilityfoundation/volatility/wiki/Command-Reference
 
+Volatility2 and Volatility3 cheatsheets:
+
+https://blog.onfvp.com/post/volatility-cheatsheet/
+
 ### Windows evenlogs forensics:
 
 parsing log file using Eric Zimmerman tool "EvtxECmd"
@@ -136,7 +140,19 @@ $ xxd -p [file] > [hex output file]
 
 # PASWORD CRACKING:
 
-##unprotect excel worksheet
+
+## To create Password list from target OSINT information, use 
+
+```
+$ sudo apt install cupp
+$ cupp -i
+
+answer the questions
+```
+
+-i for interactive mode
+
+## unprotect excel worksheet
 
 to unprotect old xls protected sheet use the follwing link:
 
